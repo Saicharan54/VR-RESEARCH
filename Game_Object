@@ -1,0 +1,29 @@
+public class Keyuser : MonoBehavior
+{
+    public float Speed = 80;
+ private Transform _playerTransform;
+  private Transform _ myTransform;
+  void Start()
+  {
+    
+    var player = GameObject.FindGameObjectWithTag("Player");
+    if (!player)
+    {
+      Debug.LogError(
+        "Could not find the main player. Ensure it has the player tag set.");
+    }
+    else
+    {
+      _playerTransform = player.transform;
+    }
+myTransform = this.transform;
+  }
+
+  void Update()
+  {
+   
+    var moveAmount = Speed * Time.deltaTime;
+    _myTransform.position = Vector3.MoveTowards(_myTransform.position,
+      _playerTransform.position, moveAmount);
+  }
+}
