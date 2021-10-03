@@ -27,3 +27,9 @@ myTransform = this.transform;
       _playerTransform.position, moveAmount);
   }
 }
+
+// Creating a Keyuser class.
+var Keyuser = GameObject.FindObjectOfType<Keyuser>();
+var enemyGameObject = enemyAI.gameObject;
+// In this multi-player game this gives the position of the users while competing in their challenges
+var position = enemyGameObject.transform.position;
